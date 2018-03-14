@@ -20,6 +20,39 @@
     <Content Remove="ClientApp\**" />
   </ItemGroup>
 
+  <ItemGroup>
+    <None Remove="ClientApp\app\components\about\about.component.ts" />
+    <None Remove="ClientApp\app\components\about\fleet\fleet.component.ts" />
+    <None Remove="ClientApp\app\components\about\history\history.component.ts" />
+    <None Remove="ClientApp\app\components\booking\booking.component.ts" />
+    <None Remove="ClientApp\app\components\events\events.component.ts" />
+    <None Remove="ClientApp\app\components\footer\footer.component.ts" />
+    <None Remove="ClientApp\app\components\membership\membership.component.ts" />
+    <None Remove="ClientApp\app\components\myaccount\myaccount.component.ts" />
+    <None Remove="ClientApp\app\components\myaccount\reservations\reservations.component.ts" />
+    <None Remove="ClientApp\app\components\rulesandregulations\rulesandregulations.component.ts" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Folder Include="ClientApp\app\components\booking\modal_newbooking\" />
+    <Folder Include="ClientApp\app\components\membership\modal_newmember\" />
+    <Folder Include="ClientApp\app\components\myaccount\modal_volunteer\" />
+    <Folder Include="ClientApp\app\components\modal_contactus\" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <TypeScriptCompile Include="ClientApp\app\components\about\about.component.ts" />
+    <TypeScriptCompile Include="ClientApp\app\components\about\fleet\fleet.component.ts" />
+    <TypeScriptCompile Include="ClientApp\app\components\about\history\history.component.ts" />
+    <TypeScriptCompile Include="ClientApp\app\components\booking\booking.component.ts" />
+    <TypeScriptCompile Include="ClientApp\app\components\events\events.component.ts" />
+    <TypeScriptCompile Include="ClientApp\app\components\footer\footer.component.ts" />
+    <TypeScriptCompile Include="ClientApp\app\components\membership\membership.component.ts" />
+    <TypeScriptCompile Include="ClientApp\app\components\myaccount\myaccount.component.ts" />
+    <TypeScriptCompile Include="ClientApp\app\components\myaccount\reservations\reservations.component.ts" />
+    <TypeScriptCompile Include="ClientApp\app\components\rulesandregulations\rulesandregulations.component.ts" />
+  </ItemGroup>
+
   <Target Name="DebugRunWebpack" BeforeTargets="Build" Condition=" '$(Configuration)' == 'Debug' And !Exists('wwwroot\dist') ">
     <!-- Ensure Node.js is installed -->
     <Exec Command="node --version" ContinueOnError="true">
