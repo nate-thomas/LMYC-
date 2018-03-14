@@ -39,6 +39,14 @@ import { ReservationsComponent } from './components/myaccount/reservations/reser
         FormsModule,
         RouterModule.forRoot([
             { path: '', redirectTo: 'home', pathMatch: 'full' },
+            { path: 'my-account', component: MyAccountComponent },
+            { path: 'reservations', component: ReservationsComponent },
+            { path: 'membership', component: MembershipComponent },
+            { path: 'events', component: EventsComponent },
+            { path: 'booking', component: BookingComponent },
+            { path: 'about', component: AboutComponent },
+            { path: 'history', component: HistoryComponent },
+            { path: 'fleet', component: FleetComponent },
             { path: 'home', component: HomeComponent },
             { path: '**', redirectTo: 'home' }
         ])
