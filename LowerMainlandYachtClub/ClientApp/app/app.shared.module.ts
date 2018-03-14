@@ -3,19 +3,34 @@ import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
 import { HttpModule } from '@angular/http';
 import { RouterModule } from '@angular/router';
-
 import { AppComponent } from './components/app/app.component';
 import { NavMenuComponent } from './components/navmenu/navmenu.component';
 import { HomeComponent } from './components/home/home.component';
-import { FetchDataComponent } from './components/fetchdata/fetchdata.component';
-import { CounterComponent } from './components/counter/counter.component';
+import { RulesAndRegulationsComponent } from './components/rulesandregulations/rulesandregulations.component';
+import { MyAccountComponent } from './components/myaccount/myaccount.component';
+import { FleetComponent } from './components/about/fleet/fleet.component';
+import { HistoryComponent } from './components/about/history/history.component';
+import { AboutComponent } from './components/about/about.component';
+import { BookingComponent } from './components/booking/booking.component';
+import { EventsComponent } from './components/events/events.component';
+import { FooterComponent } from './components/footer/footer.component';
+import { MembershipComponent } from './components/membership/membership.component';
+import { ReservationsComponent } from './components/myaccount/reservations/reservations.component';
 
 @NgModule({
     declarations: [
         AppComponent,
         NavMenuComponent,
-        CounterComponent,
-        FetchDataComponent,
+        RulesAndRegulationsComponent,
+        MyAccountComponent,
+        ReservationsComponent,
+        MembershipComponent,
+        FooterComponent,
+        EventsComponent,
+        BookingComponent,
+        AboutComponent,
+        FleetComponent,
+        HistoryComponent,
         HomeComponent
     ],
     imports: [
@@ -24,9 +39,15 @@ import { CounterComponent } from './components/counter/counter.component';
         FormsModule,
         RouterModule.forRoot([
             { path: '', redirectTo: 'home', pathMatch: 'full' },
+            { path: 'my-account', component: MyAccountComponent },
+            { path: 'reservations', component: ReservationsComponent },
+            { path: 'membership', component: MembershipComponent },
+            { path: 'events', component: EventsComponent },
+            { path: 'booking', component: BookingComponent },
+            { path: 'about', component: AboutComponent },
+            { path: 'history', component: HistoryComponent },
+            { path: 'fleet', component: FleetComponent },
             { path: 'home', component: HomeComponent },
-            { path: 'counter', component: CounterComponent },
-            { path: 'fetch-data', component: FetchDataComponent },
             { path: '**', redirectTo: 'home' }
         ])
     ]
