@@ -1,6 +1,7 @@
 ﻿using Microsoft.AspNetCore.Identity;
 using System;
 using System.Collections.Generic;
+using System.ComponentModel.DataAnnotations.Schema;
 using System.Linq;
 using System.Threading.Tasks;
 
@@ -24,7 +25,11 @@ namespace LowerMainlandYachtClub.Models
         public string Skills { get; set; }
         public string SailingExperience { get; set; }
         public double Credits { get; set; }
-        public List<EmergencyContact> EmergencyContacts { get; set; }
-        public List<Booking> Bookings { get; set; }
+
+        [ForeignKey("EmergencyContactId")]
+        public EmergencyContact EmergencyContacts { get; set; }
+
+        [ForeignKey("BookingId")]
+        public Booking Bookings { get; set; }
     }
 }

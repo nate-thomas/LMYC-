@@ -14,7 +14,5 @@ namespace LowerMainlandYachtClub.Models
         public string Phone1 { get; set; }
         public string Name2 { get; set; }
         public string Phone2 { get; set; }
-        public User User { get; set; }
-        public string UserId { get; set; }
     }
 }

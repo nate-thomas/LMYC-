@@ -25,7 +25,7 @@ namespace LowerMainlandYachtClub
                 try
                 {
                     var context = services.GetRequiredService<YachtClubDbContext>();
-                    //DbInitializer.Initialize(context); ,- Create Initializer Here!
+                    //DbInitializer.Initialize(context);
                 }
                 catch (Exception ex)
                 {
