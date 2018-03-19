@@ -12,7 +12,8 @@ namespace LowerMainlandYachtClub.Models
         [Key]
         public string ReportID { get; set; }
         public string Content { get; set; }
-        public double Hours { get; set; }
+        public int Hours { get; set; } = 0;
+        public Boolean Approved { get; set; } = false;
 
         [ForeignKey("UserId")]
         public User User { get; set; }

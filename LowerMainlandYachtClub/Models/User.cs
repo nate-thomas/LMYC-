@@ -24,7 +24,7 @@ namespace LowerMainlandYachtClub.Models
         public string SailingQualifications { get; set; }
         public string Skills { get; set; }
         public string SailingExperience { get; set; }
-        public double Credits { get; set; }
+        public int Credits { get; set; } = 320;
 
         [ForeignKey("EmergencyContactId")]
         public EmergencyContact EmergencyContacts { get; set; }
