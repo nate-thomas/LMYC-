@@ -16,6 +16,7 @@ import { EventsComponent } from './components/events/events.component';
 import { FooterComponent } from './components/footer/footer.component';
 import { MembershipComponent } from './components/membership/membership.component';
 import { ReservationsComponent } from './components/myaccount/reservations/reservations.component';
+import { FaqComponent } from './components/faq/faq.component';
 
 @NgModule({
     declarations: [
@@ -29,6 +30,7 @@ import { ReservationsComponent } from './components/myaccount/reservations/reser
         EventsComponent,
         BookingComponent,
         AboutComponent,
+        FaqComponent,
         FleetComponent,
         HistoryComponent,
         HomeComponent
@@ -47,6 +49,7 @@ import { ReservationsComponent } from './components/myaccount/reservations/reser
             { path: 'about', component: AboutComponent },
             { path: 'history', component: HistoryComponent },
             { path: 'fleet', component: FleetComponent },
+            { path: 'faq', component: FaqComponent },
             { path: 'home', component: HomeComponent },
             { path: '**', redirectTo: 'home' }
         ])
