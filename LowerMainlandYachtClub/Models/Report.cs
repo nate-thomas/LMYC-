@@ -17,5 +17,8 @@ namespace LowerMainlandYachtClub.Models
 
         [ForeignKey("UserId")]
         public User User { get; set; }
+
+        [ForeignKey("CodeId")]
+        public ClassificationCode Code { get; set; }
     }
 }
