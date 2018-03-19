@@ -7,12 +7,12 @@ using System.Threading.Tasks;
 
 namespace LowerMainlandYachtClub.Models
 {
-    public class Report
+    public class Document
     {
         [Key]
-        public string ReportID { get; set; }
-        public string Content { get; set; }
-        public double Hours { get; set; }
+        public string DocumentId { get; set; }
+        public byte[] Content { get; set; }
+        public string DocumentName { get; set; }
 
         [ForeignKey("UserId")]
         public User User { get; set; }
