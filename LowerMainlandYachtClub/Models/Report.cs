@@ -14,6 +14,7 @@ namespace LowerMainlandYachtClub.Models
         public string Content { get; set; }
         public int Hours { get; set; } = 0;
         public Boolean Approved { get; set; } = false;
+        public DateTime DateCreated { get; set; }
 
         [ForeignKey("UserId")]
         public User User { get; set; }
