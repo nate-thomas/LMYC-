@@ -3,7 +3,7 @@
 @Component({
     selector: 'fleet',
     templateUrl: './fleet.component.html',
-    styleUrls: ['./fleet.component.css']
+    styleUrls: ['./fleet.component.css', '../../../../styles.css']
 })
 export class FleetComponent {
 }

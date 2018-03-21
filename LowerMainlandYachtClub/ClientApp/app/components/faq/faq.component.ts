@@ -3,7 +3,7 @@
 @Component({
     selector: 'faq',
     templateUrl: './faq.component.html',
-    styleUrls: ['./faq.component.css']
+    styleUrls: ['./faq.component.css', '../../../styles.css']
 })
 export class FaqComponent {
 }

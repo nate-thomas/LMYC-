@@ -3,7 +3,7 @@
 @Component({
     selector: 'membership',
     templateUrl: './membership.component.html',
-    styleUrls: ['./membership.component.css']
+    styleUrls: ['./membership.component.css', '../../../styles.css']
 })
 export class MembershipComponent {
 }

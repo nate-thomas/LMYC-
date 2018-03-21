@@ -3,7 +3,7 @@
 @Component({
     selector: 'footer',
     templateUrl: './footer.component.html',
-    styleUrls: ['./footer.component.css']
+    styleUrls: ['./footer.component.css', '../../../styles.css']
 })
 export class FooterComponent {
 }
