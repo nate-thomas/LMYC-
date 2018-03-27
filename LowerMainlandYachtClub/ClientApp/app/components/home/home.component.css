@@ -10,6 +10,8 @@
 }
 
 .image-content {
+    /*background-color: rgba(0, 0, 0, 0.30);
+    padding: 40px 120px 40px 120px;*/
     position: absolute;
     top: 50%;
     left: 50%;
@@ -21,8 +23,11 @@
 }
 
 .image-content > button {
-    color: purple;
+
+    color: white;
     background-color: transparent;
-
-
+    padding: 10px 10px 10px 10px;
+    font-size: 12px;
+    font-style: italic ;
+    font-family: 'Century Gothic';
 }
