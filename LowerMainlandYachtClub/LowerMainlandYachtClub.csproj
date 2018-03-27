@@ -34,6 +34,7 @@
   </ItemGroup>
 
   <ItemGroup>
+    <Folder Include="ClientApp\app\assets\images\" />
     <Folder Include="ClientApp\app\components\booking\modal_newbooking\" />
     <Folder Include="ClientApp\app\components\membership\modal_newmember\" />
     <Folder Include="ClientApp\app\components\myaccount\modal_volunteer\" />

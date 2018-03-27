@@ -1,1 +1,28 @@
-﻿
+﻿.welcome {
+    position: relative;
+    text-align: center;
+}
+
+.welcome > img {
+    position: relative;
+    width: 100%;
+    
+}
+
+.image-content {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.image-content > h1 {
+    color: white;
+}
+
+.image-content > button {
+    color: purple;
+    background-color: transparent;
+
+
+}
