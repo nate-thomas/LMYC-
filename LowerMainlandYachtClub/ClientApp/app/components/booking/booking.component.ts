@@ -3,7 +3,7 @@
 @Component({
     selector: 'booking',
     templateUrl: './booking.component.html',
-    styleUrls: ['./booking.component.css']
+    styleUrls: ['./booking.component.css', '../../../styles.css']
 })
 export class BookingComponent {
 }

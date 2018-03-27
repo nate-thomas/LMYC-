@@ -3,7 +3,7 @@
 @Component({
     selector: 'about',
     templateUrl: './about.component.html',
-    styleUrls: ['./about.component.css']
+    styleUrls: ['./about.component.css', '../../../styles.css']
 })
 export class AboutComponent {
 }

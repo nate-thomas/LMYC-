@@ -1,51 +1,43 @@
-<nav-menu></nav-menu>
+<div class="body">
+    <nav-menu></nav-menu>
 
-<div class="alignment" align="center">
-    <div class="welcome">
-        <h1 class="header">Welcome</h1>
-        <button [routerLink]="['/membership']">
-            Become A Member
-        </button>
-    </div>
+    <div class="alignment" align="center">
+        <div class="welcome">
+            <h1 class="header">Welcome</h1>
+            <button [routerLink]="['/membership']">
+                Become A Member
+            </button>
+        </div>
 
-    <div class="about">
-        <h1 class="header">About</h1>
-        <button [routerLink]="['/history']">History</button>
-        <button [routerLink]="['/fleet']">Fleet</button>
-    </div>
+        <div class="about">
+            <h1 class="header">About</h1>
+            <button [routerLink]="['/about']">History</button>
+            <button [routerLink]="['/about']">Fleet</button>
+        </div>
 
-    <div class="booking">
-        <div class="row">
-            <div class="reservation col-sm-6">
-                <h1 class="header">Booking</h1>
-                <button [routerLink]="['/booking']">Reserve</button>
-            </div>
-            <div class="boats col-sm-6">
-                <button class="arrows"><</button>
-                <h1 class="header">Boats</h1>
-                <button class="arrows">></button>
+        <div class="booking">
+            <div class="row">
+                <div class="reservation col-sm-6">
+                    <h1 class="header">Booking</h1>
+                    <button [routerLink]="['/booking']">Reserve</button>
+                </div>
+                <div class="boats col-sm-6">
+                    <button class="arrows"><</button>
+                    <h1 class="header">Boats</h1>
+                    <button class="arrows">></button>
+                </div>
             </div>
         </div>
-    </div>
 
-    <div class="events">
-        <div class="row">
-            <h1 class="header">Upcoming Events</h1>
-            <div class="events col-sm-4">
-                <h3>Event 1</h3>
-            </div>
-            <div class="events col-sm-4">
-                <h3>Event 2</h3>
-            </div>
-            <div class="events col-sm-4">
-                <h3>Event 3</h3>
-            </div>
+        <div class="events">
+            <events></events>
+        </div>
+
+        <div class="faq">
+            <faq></faq>
+        </div>
+        <div class="footer">
+            <footer></footer>
         </div>
     </div>
-
-    <div class="faq">
-        <h1 class="header">FAQ</h1>
-    </div>
-
-    <footer></footer>
 </div>
