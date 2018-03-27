@@ -1,0 +1,32 @@
+.navbar, .navbar-inverse {
+    background-color: #3c526b;
+    border: none;
+    border-radius: 0px;
+}
+
+.navbar-toggle {
+    border: white;
+}
+
+.navbar-brand {
+    color: white;
+}
+
+.nav, .navbar-nav a {
+    color: white;
+}
+
+.nav, .navbar-nav a:hover {
+    color: #7d91a7;
+}
+
+.link-active > a {
+    color: #3c526b;
+    background-color: white;
+}
+.link-active > a:hover {
+    color: #3c526b;
+    background-color: white;
+}
+
+
