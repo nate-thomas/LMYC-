@@ -4,8 +4,10 @@ using System.IO;
 using System.Linq;
 using System.Threading.Tasks;
 using LowerMainlandYachtClub.Data;
+using LowerMainlandYachtClub.Models;
 using Microsoft.AspNetCore;
 using Microsoft.AspNetCore.Hosting;
+using Microsoft.AspNetCore.Identity;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Logging;
@@ -25,6 +27,10 @@ namespace LowerMainlandYachtClub
                 try
                 {
                     var context = services.GetRequiredService<YachtClubDbContext>();
+                    var userManager = services.GetRequiredService<UserManager<User>>();
+                    var roleManager = services.GetRequiredService<RoleManager<IdentityRole>>();
+
+                    DBInitializer.Initialize(context, roleManager, userManager).Wait();
                     //DbInitializer.Initialize(context);
                 }
                 catch (Exception ex)
