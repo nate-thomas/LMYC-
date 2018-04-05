@@ -14,7 +14,7 @@ namespace LowerMainlandYachtClub.Models
         public byte[] Content { get; set; }
         public string DocumentName { get; set; }
 
-        [ForeignKey("UserId")]
+        public string Id { get; set; }
         public User User { get; set; }
     }
 }
