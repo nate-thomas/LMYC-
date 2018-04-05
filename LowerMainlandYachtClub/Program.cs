@@ -4,8 +4,10 @@ using System.IO;
 using System.Linq;
 using System.Threading.Tasks;
 using LowerMainlandYachtClub.Data;
+using LowerMainlandYachtClub.Models;
 using Microsoft.AspNetCore;
 using Microsoft.AspNetCore.Hosting;
+using Microsoft.AspNetCore.Identity;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Logging;
@@ -16,7 +18,7 @@ namespace LowerMainlandYachtClub
     {
         public static void Main(string[] args)
         {
-
+            //BuildWebHost(args).Run();
             var host = BuildWebHost(args);
 
             using (var scope = host.Services.CreateScope())
@@ -25,7 +27,10 @@ namespace LowerMainlandYachtClub
                 try
                 {
                     var context = services.GetRequiredService<YachtClubDbContext>();
-                    //DbInitializer.Initialize(context);
+                    var userManager = services.GetRequiredService<UserManager<User>>();
+                    var roleManager = services.GetRequiredService<RoleManager<IdentityRole>>();
+
+                    DBInitializer.Initialize(context, roleManager, userManager);
                 }
                 catch (Exception ex)
                 {
@@ -36,7 +41,6 @@ namespace LowerMainlandYachtClub
 
             host.Run();
         }
-
         public static IWebHost BuildWebHost(string[] args) =>
             WebHost.CreateDefaultBuilder(args)
                 .UseStartup<Startup>()

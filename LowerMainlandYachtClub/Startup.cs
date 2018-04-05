@@ -3,8 +3,10 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 using LowerMainlandYachtClub.Data;
+using LowerMainlandYachtClub.Models;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
+using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.SpaServices.Webpack;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
@@ -25,6 +27,9 @@ namespace LowerMainlandYachtClub
         public void ConfigureServices(IServiceCollection services)
         {
             services.AddDbContext<YachtClubDbContext>(options => options.UseSqlServer(Configuration.GetConnectionString("DefaultConnection")));
+            services.AddIdentity<User, IdentityRole>()
+               .AddEntityFrameworkStores<YachtClubDbContext>()
+               .AddDefaultTokenProviders();
             services.AddMvc();
         }
 

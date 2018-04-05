@@ -27,7 +27,7 @@ namespace LowerMainlandYachtClub.Models
         public int Credits { get; set; } = 320;
 
         [ForeignKey("EmergencyContactId")]
-        public EmergencyContact EmergencyContacts { get; set; 
+        public EmergencyContact EmergencyContacts { get; set; }
 
         public List<Booking> Bookings { get; set; }
     }
