@@ -47,6 +47,7 @@
     <Folder Include="ClientApp\app\components\membership\modal_newmember\" />
     <Folder Include="ClientApp\app\components\myaccount\modal_volunteer\" />
     <Folder Include="ClientApp\app\components\modal_contactus\" />
+    <Folder Include="Migrations\" />
   </ItemGroup>
 
   <ItemGroup>

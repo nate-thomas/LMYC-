@@ -27,7 +27,6 @@ namespace LowerMainlandYachtClub
         // This method gets called by the runtime. Use this method to add services to the container.
         public void ConfigureServices(IServiceCollection services)
         {
-            services.AddDbContext<YachtClubDbContext>(options => options.UseSqlServer(Configuration.GetConnectionString("DefaultConnection")));
             services.AddIdentity<User, IdentityRole>()
                .AddEntityFrameworkStores<YachtClubDbContext>()
                .AddDefaultTokenProviders();
@@ -48,11 +47,6 @@ namespace LowerMainlandYachtClub
                     .AllowAnyHeader()
                     .AllowCredentials());
             });
-
-            // Register the Identity services.
-            services.AddIdentity<User, IdentityRole>()
-                .AddEntityFrameworkStores<YachtClubDbContext>()
-                .AddDefaultTokenProviders();
 
             // Register the OAuth2 validation handler.
             services.AddAuthentication()
