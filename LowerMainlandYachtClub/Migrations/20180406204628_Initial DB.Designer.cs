@@ -12,8 +12,8 @@ using System;
 namespace LowerMainlandYachtClub.Migrations
 {
     [DbContext(typeof(YachtClubDbContext))]
-    [Migration("20180314064121_initialDB")]
-    partial class initialDB
+    [Migration("20180406204628_Initial DB")]
+    partial class InitialDB
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
@@ -27,11 +27,11 @@ namespace LowerMainlandYachtClub.Migrations
                     b.Property<string>("BoatId")
                         .ValueGeneratedOnAdd();
 
-                    b.Property<double>("CreditsPerHour");
+                    b.Property<int>("CreditsPerHour");
 
                     b.Property<string>("Description");
 
-                    b.Property<double>("Length");
+                    b.Property<int>("Length");
 
                     b.Property<string>("Make");
 
@@ -41,7 +41,7 @@ namespace LowerMainlandYachtClub.Migrations
 
                     b.Property<string>("Status");
 
-                    b.Property<long>("Year");
+                    b.Property<int>("Year");
 
                     b.HasKey("BoatId");
 
@@ -55,17 +55,19 @@ namespace LowerMainlandYachtClub.Migrations
 
                     b.Property<string>("BoatId");
 
+                    b.Property<int>("CreditsUsed");
+
                     b.Property<DateTime>("EndDateTime");
 
-                    b.Property<DateTime>("StartDateTime");
+                    b.Property<string>("Id");
 
-                    b.Property<string>("UserId");
+                    b.Property<DateTime>("StartDateTime");
 
                     b.HasKey("BookingId");
 
                     b.HasIndex("BoatId");
 
-                    b.HasIndex("UserId");
+                    b.HasIndex("Id");
 
                     b.ToTable("Booking");
                 });
@@ -83,11 +85,7 @@ namespace LowerMainlandYachtClub.Migrations
 
                     b.Property<string>("Phone2");
 
-                    b.Property<string>("UserId");
-
                     b.HasKey("EmergencyContactId");
-
-                    b.HasIndex("UserId");
 
                     b.ToTable("EmergencyContact");
                 });
@@ -264,7 +262,9 @@ namespace LowerMainlandYachtClub.Migrations
 
                     b.Property<string>("Country");
 
-                    b.Property<double>("Credits");
+                    b.Property<int>("Credits");
+
+                    b.Property<string>("EmergencyContactId");
 
                     b.Property<string>("FirstName");
 
@@ -292,6 +292,8 @@ namespace LowerMainlandYachtClub.Migrations
 
                     b.Property<string>("WorkPhone");
 
+                    b.HasIndex("EmergencyContactId");
+
                     b.ToTable("User");
 
                     b.HasDiscriminator().HasValue("User");
@@ -305,14 +307,7 @@ namespace LowerMainlandYachtClub.Migrations
 
                     b.HasOne("LowerMainlandYachtClub.Models.User", "User")
                         .WithMany("Bookings")
-                        .HasForeignKey("UserId");
-                });
-
-            modelBuilder.Entity("LowerMainlandYachtClub.Models.EmergencyContact", b =>
-                {
-                    b.HasOne("LowerMainlandYachtClub.Models.User", "User")
-                        .WithMany("EmergencyContacts")
-                        .HasForeignKey("UserId");
+                        .HasForeignKey("Id");
                 });
 
             modelBuilder.Entity("Microsoft.AspNetCore.Identity.IdentityRoleClaim<string>", b =>
@@ -358,6 +353,13 @@ namespace LowerMainlandYachtClub.Migrations
                         .WithMany()
                         .HasForeignKey("UserId")
                         .OnDelete(DeleteBehavior.Cascade);
+                });
+
+            modelBuilder.Entity("LowerMainlandYachtClub.Models.User", b =>
+                {
+                    b.HasOne("LowerMainlandYachtClub.Models.EmergencyContact", "EmergencyContacts")
+                        .WithMany()
+                        .HasForeignKey("EmergencyContactId");
                 });
 #pragma warning restore 612, 618
         }
