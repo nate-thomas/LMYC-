@@ -26,11 +26,10 @@ namespace LowerMainlandYachtClub.Models
         public string SailingExperience { get; set; }
         public int Credits { get; set; } = 320;
 
-        //[ForeignKey("EmergencyContactObj")]
-        //public string EmergencyContact { get; set; }
-
-        //public EmergencyContact EmergencyContactObj { get; set; }
-
+        public string EmergencyContactId { get; set; }
+        public EmergencyContact EmergencyContacts { get; set; }
+        
         public List<Booking> Bookings { get; set; }
+        
     }
 }

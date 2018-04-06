@@ -18,6 +18,7 @@ namespace LowerMainlandYachtClub.Models
         public int Length { get; set; }
         public string Make { get; set; }
         public int Year { get; set; }
+
         public List<Booking> Bookings { get; set; }
     }
 }

@@ -27,7 +27,10 @@ namespace LowerMainlandYachtClub
         // This method gets called by the runtime. Use this method to add services to the container.
         public void ConfigureServices(IServiceCollection services)
         {
-           
+            services.AddDbContext<YachtClubDbContext>(options => options.UseSqlServer(Configuration.GetConnectionString("DefaultConnection")));
+            services.AddIdentity<User, IdentityRole>()
+               .AddEntityFrameworkStores<YachtClubDbContext>()
+               .AddDefaultTokenProviders();
             services.AddMvc();
             services.AddDbContext<YachtClubDbContext>(options => {
                 options.UseSqlServer(Configuration.GetConnectionString("DefaultConnection"));

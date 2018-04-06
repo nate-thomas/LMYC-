@@ -18,7 +18,7 @@ namespace LowerMainlandYachtClub
     {
         public static void Main(string[] args)
         {
-
+            //BuildWebHost(args).Run();
             var host = BuildWebHost(args);
 
             using (var scope = host.Services.CreateScope())
@@ -30,8 +30,7 @@ namespace LowerMainlandYachtClub
                     var userManager = services.GetRequiredService<UserManager<User>>();
                     var roleManager = services.GetRequiredService<RoleManager<IdentityRole>>();
 
-                    DBInitializer.Initialize(context, roleManager, userManager).Wait();
-                    //DbInitializer.Initialize(context);
+                    DBInitializer.Initialize(context, roleManager, userManager);
                 }
                 catch (Exception ex)
                 {
@@ -42,7 +41,6 @@ namespace LowerMainlandYachtClub
 
             host.Run();
         }
-
         public static IWebHost BuildWebHost(string[] args) =>
             WebHost.CreateDefaultBuilder(args)
                 .UseStartup<Startup>()

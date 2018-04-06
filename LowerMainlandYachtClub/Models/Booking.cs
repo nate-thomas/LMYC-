@@ -15,10 +15,12 @@ namespace LowerMainlandYachtClub.Models
         public DateTime EndDateTime { get; set; }
         public int CreditsUsed { get; set; }
 
-        [ForeignKey("BoatId")]
+        public string BoatId { get; set; }
         public Boat Boat { get; set; }
+        
 
-        [ForeignKey("UserId")]
+        public string Id { get; set; }
+        [ForeignKey("Id")]
         public User User { get; set; }
     }
 }
