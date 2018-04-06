@@ -106,7 +106,9 @@ namespace LowerMainlandYachtClub.Data
             }
 
             context.Boats.AddRange(DummyData.GetBoats());
+            context.SaveChanges();
             context.Bookings.AddRange(DummyData.GetBookings(context));
+            context.SaveChanges();
         }
     }
 }

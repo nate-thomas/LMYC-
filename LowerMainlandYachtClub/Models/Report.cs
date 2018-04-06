@@ -16,10 +16,10 @@ namespace LowerMainlandYachtClub.Models
         public Boolean Approved { get; set; } = false;
         public DateTime DateCreated { get; set; }
 
-        [ForeignKey("UserId")]
+        public string Id { get; set; }
         public User User { get; set; }
 
-        [ForeignKey("CodeId")]
+        public string CodeId { get; set; }
         public ClassificationCode Code { get; set; }
     }
 }
