@@ -1,0 +1,21 @@
+﻿/* To change font, or color of all text, make changes in 
+    both tags.
+*/
+
+
+/* For pages */
+.body {
+    /* Don't touch this section START*/
+    height: 100%;
+    width: 100%;
+    position: absolute;
+    right: 0;
+    top: 0;
+    /* END */
+
+    /*color: orange;*/ 
+}
+
+ /* for components maybe unecessary*/
+/*.component-content {
+}*/
