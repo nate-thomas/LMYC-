@@ -71,6 +71,38 @@ namespace LowerMainlandYachtClub.Migrations
                     b.ToTable("Booking");
                 });
 
+            modelBuilder.Entity("LowerMainlandYachtClub.Models.ClassificationCode", b =>
+                {
+                    b.Property<string>("CodeId")
+                        .ValueGeneratedOnAdd();
+
+                    b.Property<string>("Classification");
+
+                    b.HasKey("CodeId");
+
+                    b.ToTable("ClassificationCodes");
+                });
+
+            modelBuilder.Entity("LowerMainlandYachtClub.Models.Document", b =>
+                {
+                    b.Property<string>("DocumentId")
+                        .ValueGeneratedOnAdd();
+
+                    b.Property<byte[]>("Content");
+
+                    b.Property<string>("DocumentName");
+
+                    b.Property<string>("Id");
+
+                    b.Property<string>("UserId");
+
+                    b.HasKey("DocumentId");
+
+                    b.HasIndex("UserId");
+
+                    b.ToTable("Documents");
+                });
+
             modelBuilder.Entity("LowerMainlandYachtClub.Models.EmergencyContact", b =>
                 {
                     b.Property<string>("EmergencyContactId")
@@ -87,6 +119,34 @@ namespace LowerMainlandYachtClub.Migrations
                     b.HasKey("EmergencyContactId");
 
                     b.ToTable("EmergencyContact");
+                });
+
+            modelBuilder.Entity("LowerMainlandYachtClub.Models.Report", b =>
+                {
+                    b.Property<string>("ReportID")
+                        .ValueGeneratedOnAdd();
+
+                    b.Property<bool>("Approved");
+
+                    b.Property<string>("CodeId");
+
+                    b.Property<string>("Content");
+
+                    b.Property<DateTime>("DateCreated");
+
+                    b.Property<int>("Hours");
+
+                    b.Property<string>("Id");
+
+                    b.Property<string>("UserId");
+
+                    b.HasKey("ReportID");
+
+                    b.HasIndex("CodeId");
+
+                    b.HasIndex("UserId");
+
+                    b.ToTable("Reports");
                 });
 
             modelBuilder.Entity("Microsoft.AspNetCore.Identity.IdentityRole", b =>
@@ -443,6 +503,24 @@ namespace LowerMainlandYachtClub.Migrations
                     b.HasOne("LowerMainlandYachtClub.Models.User", "User")
                         .WithMany("Bookings")
                         .HasForeignKey("Id");
+                });
+
+            modelBuilder.Entity("LowerMainlandYachtClub.Models.Document", b =>
+                {
+                    b.HasOne("LowerMainlandYachtClub.Models.User", "User")
+                        .WithMany()
+                        .HasForeignKey("UserId");
+                });
+
+            modelBuilder.Entity("LowerMainlandYachtClub.Models.Report", b =>
+                {
+                    b.HasOne("LowerMainlandYachtClub.Models.ClassificationCode", "Code")
+                        .WithMany()
+                        .HasForeignKey("CodeId");
+
+                    b.HasOne("LowerMainlandYachtClub.Models.User", "User")
+                        .WithMany()
+                        .HasForeignKey("UserId");
                 });
 
             modelBuilder.Entity("Microsoft.AspNetCore.Identity.IdentityRoleClaim<string>", b =>
