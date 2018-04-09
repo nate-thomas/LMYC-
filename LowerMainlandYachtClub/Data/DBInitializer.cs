@@ -3,6 +3,7 @@ using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
 using System;
 using System.Collections.Generic;
+using System.Diagnostics;
 using System.Linq;
 using System.Threading.Tasks;
 
@@ -10,17 +11,23 @@ namespace LowerMainlandYachtClub.Data
 {
     public class DBInitializer
     {
-        public static void Initialize(YachtClubDbContext context, RoleManager<IdentityRole> _roleManager, UserManager<User> _userManager)
+        public static async Task Initialize(YachtClubDbContext context,
+                                      UserManager<User> _userManager,
+                                      RoleManager<IdentityRole> _roleManager)
         {
+            context.Database.EnsureCreated();
+
+            Debug.WriteLine("In Initializer");
+
             //Create admin role if not found.
-            if(!_roleManager.RoleExistsAsync("Admin").Result)
+            if (!_roleManager.RoleExistsAsync("Admin").Result)
             {
-                _roleManager.CreateAsync(new IdentityRole("Admin"));
+                await _roleManager.CreateAsync(new IdentityRole("Admin"));
             }
             //Create Member role if not found.
             if (!_roleManager.RoleExistsAsync("Member").Result)
             {
-                _roleManager.CreateAsync(new IdentityRole("Member"));
+                await _roleManager.CreateAsync(new IdentityRole("Member"));
             }
 
             //First member.
@@ -46,9 +53,8 @@ namespace LowerMainlandYachtClub.Data
                     SailingExperience = "None",
                     Credits = 320,
                 };
-                var result = _userManager.CreateAsync(member1, "P@$$w0rd");
-                if (result.IsCompletedSuccessfully)
-                    _userManager.AddToRoleAsync(_userManager.FindByEmailAsync(member1.Email).Result, "Member");
+                await _userManager.CreateAsync(member1, "P@$$w0rd");
+                await _userManager.AddToRoleAsync(_userManager.FindByEmailAsync(member1.Email).Result, "Member");
             }
 
             if (_userManager.FindByEmailAsync("a1@a.a").Result == null)
@@ -73,9 +79,8 @@ namespace LowerMainlandYachtClub.Data
                     SailingExperience = "Born in the ocean",
                     Credits = 320,
                 };
-                var result = _userManager.CreateAsync(member1, "P@$$w0rd");
-                if (result.IsCompletedSuccessfully)
-                    _userManager.AddToRoleAsync(_userManager.FindByEmailAsync(member1.Email).Result, "Admin");
+                await _userManager.CreateAsync(member1, "P@$$w0rd");
+                await _userManager.AddToRoleAsync(_userManager.FindByEmailAsync(member1.Email).Result, "Admin");
             }
 
             if (_userManager.FindByEmailAsync("m2@m.m").Result == null)
@@ -100,15 +105,14 @@ namespace LowerMainlandYachtClub.Data
                     SailingExperience = "None",
                     Credits = 0,
                 };
-                var result = _userManager.CreateAsync(member1, "P@$$w0rd");
-                if (result.IsCompletedSuccessfully)
-                    _userManager.AddToRoleAsync(_userManager.FindByEmailAsync(member1.Email).Result, "Admin");
+                await _userManager.CreateAsync(member1, "P@$$w0rd");
+                await _userManager.AddToRoleAsync(_userManager.FindByEmailAsync(member1.Email).Result, "Admin");
             }
 
             context.Boats.AddRange(DummyData.GetBoats());
-            context.SaveChanges();
+            await context.SaveChangesAsync();
             context.Bookings.AddRange(DummyData.GetBookings(context));
-            context.SaveChanges();
+            await context.SaveChangesAsync();
         }
     }
 }
