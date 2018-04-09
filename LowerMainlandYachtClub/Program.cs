@@ -30,7 +30,7 @@ namespace LowerMainlandYachtClub
                     var userManager = services.GetRequiredService<UserManager<User>>();
                     var roleManager = services.GetRequiredService<RoleManager<IdentityRole>>();
 
-                    DBInitializer.Initialize(context, roleManager, userManager);
+                    DBInitializer.Initialize(context, roleManager, userManager).Wait();
                 }
                 catch (Exception ex)
                 {
