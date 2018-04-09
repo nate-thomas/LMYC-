@@ -113,6 +113,8 @@ namespace LowerMainlandYachtClub.Data
             await context.SaveChangesAsync();
             context.Bookings.AddRange(DummyData.GetBookings(context));
             await context.SaveChangesAsync();
+            context.Report.AddRange(DummyData.GetReports());
+            await context.SaveChangesAsync();
         }
     }
 }
