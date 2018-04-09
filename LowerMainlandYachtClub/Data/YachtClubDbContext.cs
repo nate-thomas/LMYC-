@@ -25,5 +25,7 @@ namespace LowerMainlandYachtClub.Data
             base.OnModelCreating(modelBuilder);
         }
 
+        public DbSet<LowerMainlandYachtClub.Models.Report> Report { get; set; }
+
     }
 }
