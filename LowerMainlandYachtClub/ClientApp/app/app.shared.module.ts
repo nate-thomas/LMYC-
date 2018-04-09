@@ -17,6 +17,7 @@ import { FooterComponent } from './components/footer/footer.component';
 import { MembershipComponent } from './components/membership/membership.component';
 import { ReservationsComponent } from './components/myaccount/reservations/reservations.component';
 import { FaqComponent } from './components/faq/faq.component';
+import { LoginComponent } from './components/login/login.component';
 
 @NgModule({
     declarations: [
@@ -33,6 +34,7 @@ import { FaqComponent } from './components/faq/faq.component';
         FaqComponent,
         FleetComponent,
         HistoryComponent,
+        LoginComponent,
         HomeComponent
     ],
     imports: [
@@ -51,6 +53,7 @@ import { FaqComponent } from './components/faq/faq.component';
             { path: 'fleet', component: FleetComponent },
             { path: 'faq', component: FaqComponent },
             { path: 'home', component: HomeComponent },
+            { path: 'login', component: LoginComponent },
             { path: '**', redirectTo: 'home' }
         ])
     ]

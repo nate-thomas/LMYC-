@@ -8,7 +8,14 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <PackageReference Include="bootstrap" Version="4.0.0" />
+    <PackageReference Include="EntityFramework" Version="6.2.0" />
     <PackageReference Include="Microsoft.AspNetCore.All" Version="2.0.5" />
+    <PackageReference Include="Microsoft.VisualStudio.Web.CodeGeneration.Design" Version="2.0.1" />
+    <PackageReference Include="AspNet.Security.OAuth.Validation" Version="2.0.0-*" />
+    <PackageReference Include="OpenIddict" Version="2.0.0-*" />
+    <PackageReference Include="OpenIddict.EntityFrameworkCore" Version="2.0.0-*" />
+    <PackageReference Include="OpenIddict.Mvc" Version="2.0.0-*" />
   </ItemGroup>
 
   <ItemGroup>
@@ -40,6 +47,7 @@
     <Folder Include="ClientApp\app\components\membership\modal_newmember\" />
     <Folder Include="ClientApp\app\components\myaccount\modal_volunteer\" />
     <Folder Include="ClientApp\app\components\modal_contactus\" />
+    <Folder Include="Migrations\" />
   </ItemGroup>
 
   <ItemGroup>
