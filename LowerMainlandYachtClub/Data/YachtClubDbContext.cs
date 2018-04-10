@@ -13,6 +13,9 @@ namespace LowerMainlandYachtClub.Data
 
         public DbSet<User> Users { get; set; }
         public DbSet<Boat> Boats { get; set; }
+        public DbSet<Document> Documents { get; set; }
+        public DbSet<Report> Reports { get; set; }
+        public DbSet<ClassificationCode> ClassificationCodes { get; set; }
         public DbSet<EmergencyContact> EmergencyContacts { get; set; }
         public DbSet<Booking> Bookings { get; set; }
 
