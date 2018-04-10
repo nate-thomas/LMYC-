@@ -3,6 +3,7 @@ using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
 using System;
 using System.Collections.Generic;
+using System.Diagnostics;
 using System.Linq;
 using System.Threading.Tasks;
 
@@ -14,8 +15,10 @@ namespace LowerMainlandYachtClub.Data
         {
             context.Database.EnsureCreated();
 
+            Debug.WriteLine("In Initializer");
+
             //Create admin role if not found.
-            if(await _roleManager.FindByNameAsync("Admin") == null)
+            if (await _roleManager.FindByNameAsync("Admin") == null)
             {
                 await _roleManager.CreateAsync(new IdentityRole("Admin"));
             }
@@ -108,9 +111,11 @@ namespace LowerMainlandYachtClub.Data
             }
 
             context.Boats.AddRange(DummyData.GetBoats());
-            context.SaveChanges();
+            await context.SaveChangesAsync();
             context.Bookings.AddRange(DummyData.GetBookings(context));
-            context.SaveChanges();
+            await context.SaveChangesAsync();
+            context.Report.AddRange(DummyData.GetReports());
+            await context.SaveChangesAsync();
         }
     }
 }
