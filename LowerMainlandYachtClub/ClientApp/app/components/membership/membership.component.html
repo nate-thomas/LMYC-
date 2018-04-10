@@ -1,5 +1,189 @@
 ﻿<div class="body">
     <nav-menu></nav-menu>
-    <h1>MEMBERSHIP</h1>
-    <rules-and-regulations></rules-and-regulations>
+    <div class="container">
+        <div class="container membership-container">
+            <h1>Membership</h1>
+            <p>You don't need to own a boat or even know how to sail in order become a member of one of White Rock's best kept secrets – the Lower Mainland Yacht Co-op (LMYC). All you need is an interest in sailing.</p>
+            <p>You can learn to be a skipper on one of our seven boats; join the fun on long weekend cruises or simply sail around Semiahmoo Bay with other members... all for an affordable price!</p>
+            <p>The Lower Mainland Yacht Cooperative (LMYC) consists of 115 "Full" members and six sailboats moored at the end of the pier. We have three C&C 27’s MK3, a Catalina 28 Mk2. a Cal 25 MK2 and a 27' C&C MK5. Aside from a membership fee, members are required to contribute a minimum of 20 hours of their time to either boat maintenance or other club tasks.</p>
+            <p>The most important aspect of the cooperative is the maintenance of the boats. All boats are kept in good condition as a result of regular maintenance, including scheduled Maintenance Days, which are on the Saturday morning following the General Meeting of each month. Each boat has it’s own Maintenance Crew and Leader. Most Maintenance Day crew members are scheduled for six times per year.</p>
+            <p>Annual bottom painting and minor upgrading are done early each season. Co-op members do most of this work; professional trades are hired as needed. This is an excellent opportunity to learn the workings of the boats while getting to know your fellow sailors.</p>
+            <p>Boats are booked on a first come, first serve basis, each member being allocated 320 hours of sailing during the "high season" months of June, July and August. This allows for a week of sailing during this peak period if accompanied by three non-member guests/crew. During the balance of the year, a member's booking hours are unlimited.</p>
+            <p>As a full member, you can join in the fun on the long weekend "Club Cruises" to gorgeous destinations in the Gulf Islands. Your nominal fee for the weekend includes most provisions and expenses. Saturday morning you leave for a beautiful 3-day trip to some of BC's most beautiful spots.</p>
+            <p>The fact that we usually have a waiting list for full membership points to the value and popularity of our club. Often all of those wishing full membership are able to transfer from social member status by the February following their application.</p>
+            <p>Once the application to full membership is accepted, the 2018 initiation fee of $200 plus the annual fee of $700 [total amount = $900] is payable prior to January 31st.  There are no refunds on memberships.</p>
+            <p>Those on our waiting list pay $25 per year. They are referred to as "Social Members" and are entitled to attend all member meetings and social functions. Associate members stay at the top of the waiting list, pay $50 per year, and are also welcome at all member meetings and social functions.</p>
+            <p><b>For more information email Doug our Membeship Dirctor at <a href="mailto:lmycmembership@gmail.com">lmycmembership@gmail.com</a> he'll be happy to answer questions and guide you thru the process. But if you are ready to apply, please fill in the application form below:</b></p>
+        </div>
+
+        <div class="container jumbotron signup-container">
+            <form>
+                <h2 class="display-4">Come aboard and join the adventure!</h2>
+                <p class="lead">Fill in the form to join our organizaiton. </p>
+                <hr />
+                <button type="button" class="btn btn-lg btn-primary" data-toggle="modal" data-target="#signupModal">
+                    Sign Up >>
+                </button>
+            </form>
+        </div>
+    </div>
+
+
+    <!--Signup Modal-->
+
+    <div class="modal fade" id="signupModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLongTitle" aria-hidden="true">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h4 class="modal-title lead text-center" id="signupModalTitle">Sign Up</h4>
+                </div>
+                <div class="modal-body">
+                    <form>
+                        <div class="row">
+                            <div class="form-group col-lg-6 col-md-6 col-sm-6">
+                                <label for="InputFirstName">First Name</label>
+                                <input type="text" class="form-control" id="InputFirstName" aria-describedby="firstnameHelp" placeholder="First Name" />
+                                <small id="firstnameHelp" class="form-text text-muted">Enter your first name.</small>
+                            </div>
+                            <div class="form-group col-lg-6 col-md-6 col-sm-6">
+                                <label for="InputLastName">Last Name</label>
+                                <input type="text" class="form-control" id="InputLastName" aria-describedby="lastnameHelp" placeholder="Last Name" />
+                                <small id="lastnameHelp" class="form-text text-muted">Enter your last name.</small>
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="InputEmail">Email Address</label>
+                            <input type="email" class="form-control" id="InputEmail" placeholder="Enter Email Address">
+                            <small id="emailHelp" class="form-text text-muted">A valid e-mail address. All e-mails from the system will be sent to this address. The e-mail address is not made public and will only be used if you wish to receive a new password or wish to receive certain news or notifications by e-mail.</small>
+                        </div>
+                        <div class="form-group">
+                            <label for="InputPassword1">Password</label>
+                            <input type="password" class="form-control" id="exampleInputPassword1" placeholder="Password">
+                        </div>
+
+                        <div class="row">
+                            <div class="form-group col-lg-4 col-md-4 col-sm-4">
+                                <label for="InputHomePhone">Home Phone</label>
+                                <input type="text" class="form-control" id="InputHomePhone" placeholder="Home Phone" />
+                            </div>
+                            <div class="form-group col-lg-4 col-md-4 col-sm-4">
+                                <label for="InputMobilePhone">Mobile Phone</label>
+                                <input type="text" class="form-control" id="InputMobilePhone" placeholder="Mobile Phone" />
+                            </div>
+                            <div class="form-group col-lg-4 col-md-4 col-sm-4">
+                                <label for="InputHomePhone">Work Phone</label>
+                                <input type="text" class="form-control" id="InputWorkPhone" placeholder="Work Phone" />
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label for="InputAddress">Address</label>
+                            <input type="text" class="form-control" id="InputAddress" aria-describedby="addressHelp" placeholder="123 Kingsway Ave, Burnaby, BC, V1V1V1" />
+                            <small id="addressHelp" class="form-text text-muted">Enter your residential address.</small>
+                        </div>
+
+                        <br />
+                        <div class="row">
+                            <div class="form-group col-lg-6 col-md-6 col-sm-6">
+                                <label for="InputMemberStatus">Membership Type</label>
+                                <select class="form-control" id="InputMemberStatus">
+                                    <option>Full Member</option>
+                                    <option>Associate Member</option>
+                                    <option>Social Member</option>
+                                </select>
+                            </div>
+                            <div class="form-group col-lg-6 col-md-6 col-sm-6">
+
+                                <label for="InputSkipperStatus">Skipper Status</label>
+                                <select class="form-control" id="InputSkipperStatus">
+                                    <option>Crew</option>
+                                    <option>Day Skipper</option>
+                                    <option>Cruise Skipper</option>
+                                </select>
+                            </div>
+                        </div>
+
+                        <hr />
+
+                        <div class="form-group"><label>Emergency Contact 1</label></div>
+                        <div class="row">
+                            <div class="form-group col-lg-4 col-md-4 col-sm-4">
+                                <label for="InputEmergencyName1">Name</label>
+                                <input type="text" class="form-control" id="InputEmergencyName1" placeholder="Name">
+                            </div>
+                            <div class="form-group col-lg-4 col-md-4 col-sm-4">
+
+                                <label for="InputEmergencyRelationship1">Relationship</label>
+                                <select class="form-control" id="InputEmergencyRelationship1">
+                                    <option>Family</option>
+                                    <option>Relative</option>
+                                    <option>Friend</option>
+                                    <option>Other</option>
+                                </select>
+                            </div>
+                            <div class="form-group col-lg-4 col-md-4 col-sm-4">
+                                <label for="InputEmergencyNumber1">Contact Info</label>
+                                <input type="text" class="form-control" id="InputEmergencyNumber1" placeholder="7781230000">
+                            </div>
+                        </div>
+                        <hr />
+                        <div class="form-group"><label>Emergency Contact 2</label></div>
+                        <div class="row">
+                            <div class="form-group col-lg-4 col-md-4 col-sm-4">
+                                <label for="InputEmergencyName2">Name</label>
+                                <input type="text" class="form-control" id="InputEmergencyName2" placeholder="Name">
+                            </div>
+                            <div class="form-group col-lg-4 col-md-4 col-sm-4">
+
+                                <label for="InputEmergencyRelationship2">Relationship</label>
+                                <select class="form-control" id="InputEmergencyRelationship2">
+                                    <option>Family</option>
+                                    <option>Relative</option>
+                                    <option>Friend</option>
+                                    <option>Other</option>
+                                </select>
+                            </div>
+                            <div class="form-group col-lg-4 col-md-4 col-sm-4">
+                                <label for="InputEmergencyNumber2">Contact Info</label>
+                                <input type="text" class="form-control" id="InputEmergencyNumber2" placeholder="7781230000">
+                            </div>
+                        </div>
+                        <hr />
+                        <div class="row">
+                            <div class="form-group col-lg-8 col-md-8 col-sm-8">
+                                <label for="InputSailingQualification">Sailing Qualification</label>
+                                <input type="text" class="form-control" id="InputSailingQualification" placeholder="Skills">
+                            </div>
+                            <div class="form-group col-lg-4 col-md-4 col-sm-4">
+                                <label for="InputSailingExperience">Sailing Experience</label>
+                                <select class="form-control" id="InputSailingExperience" placeholder="Sailing Experience">
+                                    <option>Professional</option>
+                                    <option>Intermediate</option>
+                                    <option>Beginner</option>
+                                </select>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label for="InputSkills">Skills</label>
+                            <input type="text" class="form-control" id="InputSkills" placeholder="Skills">
+                        </div>
+                        <div class="form-group">
+                            <input type="checkbox" class="form-check-input" id="Check1">
+                            <label class="form-check-label" for="Check1">You agree to our terms of use.</label>
+                        </div>
+                    </form>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                    <button type="button" class="btn btn-primary">Submit</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+    <div class="container">
+        <rules-and-regulations></rules-and-regulations>
+    </div>
+
 </div>
