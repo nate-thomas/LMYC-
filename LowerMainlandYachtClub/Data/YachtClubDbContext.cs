@@ -30,5 +30,7 @@ namespace LowerMainlandYachtClub.Data
 
         public DbSet<LowerMainlandYachtClub.Models.Report> Report { get; set; }
 
+        public DbSet<LowerMainlandYachtClub.Models.RoleViewModel> RoleViewModel { get; set; }
+
     }
 }
