@@ -1,1 +1,10 @@
-﻿
+﻿#signupModalTitle {
+    background-color: #6c99c4;
+    color: white;
+    padding-top: 10px;
+    padding-bottom: 10px;
+}
+
+.signup-container {
+    margin-top: 20px;
+}
