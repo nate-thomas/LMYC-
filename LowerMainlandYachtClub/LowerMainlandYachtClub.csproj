@@ -44,10 +44,7 @@
   <ItemGroup>
     <Folder Include="ClientApp\app\assets\images\" />
     <Folder Include="ClientApp\app\components\booking\modal_newbooking\" />
-    <Folder Include="ClientApp\app\components\membership\modal_newmember\" />
-    <Folder Include="ClientApp\app\components\myaccount\modal_volunteer\" />
     <Folder Include="ClientApp\app\components\modal_contactus\" />
-    <Folder Include="Migrations\" />
   </ItemGroup>
 
   <ItemGroup>
@@ -58,6 +55,8 @@
     <TypeScriptCompile Include="ClientApp\app\components\events\events.component.ts" />
     <TypeScriptCompile Include="ClientApp\app\components\footer\footer.component.ts" />
     <TypeScriptCompile Include="ClientApp\app\components\membership\membership.component.ts" />
+    <TypeScriptCompile Include="ClientApp\app\components\membership\modal_newmember\modal_newmember.component.ts" />
+    <TypeScriptCompile Include="ClientApp\app\components\myaccount\modal_volunteer\modal_volunteer.component.ts" />
     <TypeScriptCompile Include="ClientApp\app\components\myaccount\myaccount.component.ts" />
     <TypeScriptCompile Include="ClientApp\app\components\myaccount\reservations\reservations.component.ts" />
     <TypeScriptCompile Include="ClientApp\app\components\rulesandregulations\rulesandregulations.component.ts" />

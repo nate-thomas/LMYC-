@@ -25,3 +25,14 @@
     font-size: 18px;
 }
 
+.button-container {
+    padding-left: 30px;
+    padding-right: 30px;
+}
+
+#volunteerModalTitle {
+    background-color: #286090;
+    color: white;
+    padding-top: 10px;
+    padding-bottom: 10px;
+}

@@ -85,7 +85,7 @@
                     <!--First Name, Last Name, Address, Phone, Emergency Contactx2, Change PW-->
                     <div id="personal-info" class="tab-pane fade">
 
-                        <h3>Personal Informaton</h3>
+                        <h3>Personal Information</h3>
                         <table class="table table-hover info-table">
 
                             <tbody>
@@ -135,8 +135,42 @@
     </div>
 
 
-    <div class="container">
+    <!-- Buttons for modals (Volunteer, Reservations, View Docs)-->
+    <div class="container button-container">
+        <form class="jumbotron">
+            
+            <!-- Volunteer Modal -->
+            <button type="button" class="btn btn-lg btn-primary" data-toggle="modal" data-target="#volunteerModal">
+                Volunteer
+            </button>
+            
+            <!-- (TBD) Go to Reservation page-->
+            <a href="#reservation" class="btn btn-lg btn-primary page-scroll">
+                    Reservations
+            </a>
+            
+            <!-- (TBD) View docs? -->
+            
+            <button type="button" class="btn btn-lg btn-primary" data-toggle="modal" data-target="#viewDocs">
+                View Documents
+            </button>
+
+        </form>
+    </div>
+
+
+    <!-- RESERVATION SECTION-->
+    <div class="container" id="reservation">
         <!--RESERVATION-->
         <reservations></reservations>
     </div>
+
 </div>
+
+
+
+<!-- Volunteer Modal -->
+
+<modal_volunteer></modal_volunteer>
+
+<!-- Modal End -->
