@@ -45,7 +45,6 @@
     <Folder Include="ClientApp\app\assets\images\" />
     <Folder Include="ClientApp\app\components\booking\modal_newbooking\" />
     <Folder Include="ClientApp\app\components\modal_contactus\" />
-    <Folder Include="Migrations\" />
   </ItemGroup>
 
   <ItemGroup>

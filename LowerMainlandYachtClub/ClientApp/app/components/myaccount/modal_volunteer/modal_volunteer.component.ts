@@ -9,12 +9,18 @@ export class Modal_VolunteerComponent {
 
 
     /*
-    content: string = 'n/a';
-    hours: number = 0;
-    approved: boolean = false;
-    dateCreated: Date = new Date();
-    userId: string = 'n/a'; //Id of user
-    codeId: string = 'n/a';  //Id of code
+    Content: string = 'n/a';
+    Hours: number = 0;
+    Approved: boolean = false;
+    DateCreated: Date = new Date();
+    User: string = 'n/a'; 
+    Classification: string = 'n/a';
+    CodeId: string = 'n/a';
+
+
     */
+    public createVolunteer() {
+
+    }
 
 }
