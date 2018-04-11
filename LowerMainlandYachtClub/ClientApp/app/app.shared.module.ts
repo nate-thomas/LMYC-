@@ -18,6 +18,8 @@ import { MembershipComponent } from './components/membership/membership.componen
 import { ReservationsComponent } from './components/myaccount/reservations/reservations.component';
 import { FaqComponent } from './components/faq/faq.component';
 import { LoginComponent } from './components/login/login.component';
+import { Modal_NewMemberComponent } from "./components/membership/modal_newmember/modal_newmember.component";
+import { Modal_VolunteerComponent } from "./components/myaccount/modal_volunteer/modal_volunteer.component";
 
 @NgModule({
     declarations: [
@@ -25,8 +27,10 @@ import { LoginComponent } from './components/login/login.component';
         NavMenuComponent,
         RulesAndRegulationsComponent,
         MyAccountComponent,
+        Modal_VolunteerComponent,
         ReservationsComponent,
         MembershipComponent,
+        Modal_NewMemberComponent,
         FooterComponent,
         EventsComponent,
         BookingComponent,

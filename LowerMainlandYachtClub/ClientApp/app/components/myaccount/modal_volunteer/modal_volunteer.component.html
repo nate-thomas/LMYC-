@@ -1,0 +1,82 @@
+﻿
+<!-- Volunteer Modal -->
+
+<!--      Should display the following:
+                Content
+                Hours
+                Approved
+                DateCreated
+                Id
+                Code    
+-->
+
+<div class="modal fade" id="volunteerModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLongTitle" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <!-- View volunteer reports -->
+            <div class="volunteerList">
+                <div class="modal-header">
+                    <h4 class="modal-title lead text-center jumbotron" id="volunteerModalTitle">Volunteer List</h4>
+                </div>
+
+                <div class="modal-body">
+                    <table class="table">
+                        <thead>
+                            <tr>
+                                <th>
+                                    Content
+                                </th>
+                                <th>
+                                    Hours
+                                </th>
+                                <th>
+                                    Approved
+                                </th>
+                                <th>
+                                    DateCreated
+                                </th>
+                                <th>
+                                    User
+                                </th>
+                                <th>
+                                    Classification Code
+                                </th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr *ngFor="let v of volunteers">
+                                <td>{{v.content}}</td>
+                                <td>{{v.hours}}</td>
+                                <td>{{v.approved}}</td>
+                                <td>{{v.dateCreated}}</td>
+                                <td>{{v.userId}}</td>
+                                <td>{{v.codeId}}</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-primary">I'd like to volunteer!</button>
+                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                </div>
+            </div>
+            
+            <!-- Create volunteer hours-->
+            <div class="createVolunteer">
+                <div class="modal-header">
+                    <h4 class="modal-title lead text-center jumbotron" id="volunteerModalTitle">Create Volunteer Hours</h4>
+                </div>
+
+                <div class="modal-body">
+
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-primary" (click)="createVolunteer()>Submit</button>
+                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                </div>
+            </div>
+    </div>
+</div>
+
+
+<!-- Modal End -->
