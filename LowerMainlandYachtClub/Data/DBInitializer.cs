@@ -3,6 +3,7 @@ using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
 using System;
 using System.Collections.Generic;
+using System.Diagnostics;
 using System.Linq;
 using System.Threading.Tasks;
 
@@ -14,15 +15,37 @@ namespace LowerMainlandYachtClub.Data
         {
             context.Database.EnsureCreated();
 
+            Debug.WriteLine("In Initializer");
+
             //Create admin role if not found.
-            if(await _roleManager.FindByNameAsync("Admin") == null)
+            if (await _roleManager.FindByNameAsync("Admin") == null)
             {
                 await _roleManager.CreateAsync(new IdentityRole("Admin"));
             }
-            //Create Member role if not found.
-            if (await _roleManager.FindByNameAsync("Member") == null)
+            //Create full member - good standing role if not found.
+            if (await _roleManager.FindByNameAsync("Good Standing Member") == null)
             {
-                await _roleManager.CreateAsync(new IdentityRole("Member"));
+                await _roleManager.CreateAsync(new IdentityRole("Good Standing Member"));
+            }
+            //Create full member - not good standing role if not found
+            if (await _roleManager.FindByNameAsync("Not Good Standing Member") == null)
+            {
+                await _roleManager.CreateAsync(new IdentityRole("Not Good Standing Member"));
+            }
+            //Create associate member standing role if not found
+            if (await _roleManager.FindByNameAsync("Associate Member") == null)
+            {
+                await _roleManager.CreateAsync(new IdentityRole("Associate Member"));
+            }
+            //Create social member standing role if not found
+            if (await _roleManager.FindByNameAsync("Social Member") == null)
+            {
+                await _roleManager.CreateAsync(new IdentityRole("Social Member"));
+            }
+            //Create booking moderator standing role if not found
+            if (await _roleManager.FindByNameAsync("Booking Moderator") == null)
+            {
+                await _roleManager.CreateAsync(new IdentityRole("Booking Moderator"));
             }
 
             //First member.
@@ -50,7 +73,7 @@ namespace LowerMainlandYachtClub.Data
                 };
                 var result = await _userManager.CreateAsync(member1, "P@$$w0rd");
                 if (result.Succeeded)
-                    await _userManager.AddToRoleAsync(member1, "Member");
+                    await _userManager.AddToRoleAsync(member1, "Good Standing Member");
             }
 
             if (await _userManager.FindByEmailAsync("a1@a.a") == null)
@@ -108,9 +131,11 @@ namespace LowerMainlandYachtClub.Data
             }
 
             context.Boats.AddRange(DummyData.GetBoats());
-            context.SaveChanges();
+            await context.SaveChangesAsync();
             context.Bookings.AddRange(DummyData.GetBookings(context));
-            context.SaveChanges();
+            await context.SaveChangesAsync();
+            context.Report.AddRange(DummyData.GetReports());
+            await context.SaveChangesAsync();
         }
     }
 }
