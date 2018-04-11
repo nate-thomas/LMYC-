@@ -18,9 +18,13 @@ namespace LowerMainlandYachtClub.Models
         public string BoatId { get; set; }
         public Boat Boat { get; set; }
         
+        public string Itinerary { get; set; }
 
         public string Id { get; set; }
         [ForeignKey("Id")]
         public User User { get; set; }
+
+        public List<Member> Members { get; set; }
+        public List<NonMember> NonMembers { get; set; }
     }
 }

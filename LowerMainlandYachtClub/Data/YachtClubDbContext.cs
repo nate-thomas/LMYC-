@@ -18,6 +18,8 @@ namespace LowerMainlandYachtClub.Data
         public DbSet<ClassificationCode> ClassificationCodes { get; set; }
         public DbSet<EmergencyContact> EmergencyContacts { get; set; }
         public DbSet<Booking> Bookings { get; set; }
+        public DbSet<Member> Members { get; set; }
+        public DbSet<NonMember> NonMembers { get; set; }
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
@@ -25,8 +27,18 @@ namespace LowerMainlandYachtClub.Data
             modelBuilder.Entity<Boat>().ToTable("Boat");
             modelBuilder.Entity<EmergencyContact>().ToTable("EmergencyContact");
             modelBuilder.Entity<Booking>().ToTable("Booking");
+            modelBuilder.Entity<Report>().ToTable("Report");
+            modelBuilder.Entity<Document>().ToTable("Document");
+            modelBuilder.Entity<Member>().ToTable("Member");
+            modelBuilder.Entity<NonMember>().ToTable("NonMember");
+            modelBuilder.Entity<Member>().HasKey(c => new { c.BookingId, c.UserId });
+
             base.OnModelCreating(modelBuilder);
         }
+
+        public DbSet<LowerMainlandYachtClub.Models.Report> Report { get; set; }
+
+        public DbSet<LowerMainlandYachtClub.Models.RoleViewModel> RoleViewModel { get; set; }
 
     }
 }
