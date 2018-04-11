@@ -295,6 +295,7 @@ namespace LowerMainlandYachtClub.Migrations
                     CreditsUsed = table.Column<int>(nullable: false),
                     EndDateTime = table.Column<DateTime>(nullable: false),
                     Id = table.Column<string>(nullable: true),
+                    Itinerary = table.Column<string>(nullable: true),
                     StartDateTime = table.Column<DateTime>(nullable: false)
                 },
                 constraints: table =>
@@ -315,28 +316,28 @@ namespace LowerMainlandYachtClub.Migrations
                 });
 
             migrationBuilder.CreateTable(
-                name: "Documents",
+                name: "Document",
                 columns: table => new
                 {
                     DocumentId = table.Column<string>(nullable: false),
                     Content = table.Column<byte[]>(nullable: true),
+                    ContentType = table.Column<string>(nullable: true),
                     DocumentName = table.Column<string>(nullable: true),
-                    Id = table.Column<string>(nullable: true),
-                    UserId = table.Column<string>(nullable: true)
+                    Id = table.Column<string>(nullable: true)
                 },
                 constraints: table =>
                 {
-                    table.PrimaryKey("PK_Documents", x => x.DocumentId);
+                    table.PrimaryKey("PK_Document", x => x.DocumentId);
                     table.ForeignKey(
-                        name: "FK_Documents_AspNetUsers_UserId",
-                        column: x => x.UserId,
+                        name: "FK_Document_AspNetUsers_Id",
+                        column: x => x.Id,
                         principalTable: "AspNetUsers",
                         principalColumn: "Id",
                         onDelete: ReferentialAction.Restrict);
                 });
 
             migrationBuilder.CreateTable(
-                name: "Reports",
+                name: "Report",
                 columns: table => new
                 {
                     ReportID = table.Column<string>(nullable: false),
@@ -350,15 +351,15 @@ namespace LowerMainlandYachtClub.Migrations
                 },
                 constraints: table =>
                 {
-                    table.PrimaryKey("PK_Reports", x => x.ReportID);
+                    table.PrimaryKey("PK_Report", x => x.ReportID);
                     table.ForeignKey(
-                        name: "FK_Reports_ClassificationCodes_CodeId",
+                        name: "FK_Report_ClassificationCodes_CodeId",
                         column: x => x.CodeId,
                         principalTable: "ClassificationCodes",
                         principalColumn: "CodeId",
                         onDelete: ReferentialAction.Restrict);
                     table.ForeignKey(
-                        name: "FK_Reports_AspNetUsers_UserId",
+                        name: "FK_Report_AspNetUsers_UserId",
                         column: x => x.UserId,
                         principalTable: "AspNetUsers",
                         principalColumn: "Id",
@@ -396,6 +397,49 @@ namespace LowerMainlandYachtClub.Migrations
                         column: x => x.AuthorizationId,
                         principalTable: "OpenIddictAuthorizations",
                         principalColumn: "Id",
+                        onDelete: ReferentialAction.Restrict);
+                });
+
+            migrationBuilder.CreateTable(
+                name: "Member",
+                columns: table => new
+                {
+                    BookingId = table.Column<string>(nullable: false),
+                    UserId = table.Column<string>(nullable: false)
+                },
+                constraints: table =>
+                {
+                    table.PrimaryKey("PK_Member", x => new { x.BookingId, x.UserId });
+                    table.ForeignKey(
+                        name: "FK_Member_Booking_BookingId",
+                        column: x => x.BookingId,
+                        principalTable: "Booking",
+                        principalColumn: "BookingId",
+                        onDelete: ReferentialAction.Cascade);
+                    table.ForeignKey(
+                        name: "FK_Member_AspNetUsers_UserId",
+                        column: x => x.UserId,
+                        principalTable: "AspNetUsers",
+                        principalColumn: "Id",
+                        onDelete: ReferentialAction.Cascade);
+                });
+
+            migrationBuilder.CreateTable(
+                name: "NonMember",
+                columns: table => new
+                {
+                    NonMemberId = table.Column<string>(nullable: false),
+                    BookingId = table.Column<string>(nullable: true),
+                    Name = table.Column<string>(nullable: true)
+                },
+                constraints: table =>
+                {
+                    table.PrimaryKey("PK_NonMember", x => x.NonMemberId);
+                    table.ForeignKey(
+                        name: "FK_NonMember_Booking_BookingId",
+                        column: x => x.BookingId,
+                        principalTable: "Booking",
+                        principalColumn: "BookingId",
                         onDelete: ReferentialAction.Restrict);
                 });
 
@@ -454,9 +498,19 @@ namespace LowerMainlandYachtClub.Migrations
                 column: "Id");
 
             migrationBuilder.CreateIndex(
-                name: "IX_Documents_UserId",
-                table: "Documents",
+                name: "IX_Document_Id",
+                table: "Document",
+                column: "Id");
+
+            migrationBuilder.CreateIndex(
+                name: "IX_Member_UserId",
+                table: "Member",
                 column: "UserId");
+
+            migrationBuilder.CreateIndex(
+                name: "IX_NonMember_BookingId",
+                table: "NonMember",
+                column: "BookingId");
 
             migrationBuilder.CreateIndex(
                 name: "IX_OpenIddictApplications_ClientId",
@@ -493,13 +547,13 @@ namespace LowerMainlandYachtClub.Migrations
                 filter: "[ReferenceId] IS NOT NULL");
 
             migrationBuilder.CreateIndex(
-                name: "IX_Reports_CodeId",
-                table: "Reports",
+                name: "IX_Report_CodeId",
+                table: "Report",
                 column: "CodeId");
 
             migrationBuilder.CreateIndex(
-                name: "IX_Reports_UserId",
-                table: "Reports",
+                name: "IX_Report_UserId",
+                table: "Report",
                 column: "UserId");
         }
 
@@ -521,10 +575,13 @@ namespace LowerMainlandYachtClub.Migrations
                 name: "AspNetUserTokens");
 
             migrationBuilder.DropTable(
-                name: "Booking");
+                name: "Document");
 
             migrationBuilder.DropTable(
-                name: "Documents");
+                name: "Member");
+
+            migrationBuilder.DropTable(
+                name: "NonMember");
 
             migrationBuilder.DropTable(
                 name: "OpenIddictScopes");
@@ -533,19 +590,22 @@ namespace LowerMainlandYachtClub.Migrations
                 name: "OpenIddictTokens");
 
             migrationBuilder.DropTable(
-                name: "Reports");
+                name: "Report");
 
             migrationBuilder.DropTable(
                 name: "AspNetRoles");
 
             migrationBuilder.DropTable(
-                name: "Boat");
+                name: "Booking");
 
             migrationBuilder.DropTable(
                 name: "OpenIddictAuthorizations");
 
             migrationBuilder.DropTable(
                 name: "ClassificationCodes");
+
+            migrationBuilder.DropTable(
+                name: "Boat");
 
             migrationBuilder.DropTable(
                 name: "AspNetUsers");
