@@ -32,7 +32,24 @@
                         <span class='glyphicon glyphicon-th-list'></span> My Account
                     </a>
                 </li>
+                <li class="login-link">
+                    <a data-toggle="modal" data-target="#loginModal">
+                        <span class='glyphicon glyphicon-log-in'></span> Login
+                    </a>
+                </li>
+                <li [routerLinkActive]="['link-active']">
+                    <a [routerLink]="['/login']">
+                        Login
+                    </a>
+                </li>
             </ul>
+        </div>
+    </div>
+</div>
+<div id="loginModal" class="modal fade" role="dialog">
+    <div class="modal-dialog login-modal">
+        <div class="modal-content">
+            <login></login>
         </div>
     </div>
 </div>

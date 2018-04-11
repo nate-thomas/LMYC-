@@ -1,11 +1,29 @@
 ﻿<div class="body">
     <div class='container-fluid'>
         <div class="content">
-            <div class="heading">
+            <!--<div class="heading">
                 <h1>LOGIN</h1>
-            </div>
+            </div>-->
             <form (ngSubmit)="login()">
-                <div class="row">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal">&times;</button>
+                    <h4 class="modal-title text-center">Login</h4>
+                </div>
+                <div class="modal-body">
+                    <div class="row">
+                        <input id="username" type="text" placeholder="Username" name="username" [(ngModel)]="username" />
+                    </div>
+                    <br />
+                    <div class="row">
+                        <input id="password" type="password" placeholder="Password" name="password" [(ngModel)]="password" />
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <button id="login" type="submit" class="btn btn-main">Login</button>
+                    <button type="button" class="btn btn-default" data-dismiss="modal">Cancel</button>
+                </div>
+
+                <!--<div class="row">
                     <input id="username" type="text" placeholder="Username" name="username" [(ngModel)]="username" />
                 </div>
                 <br />
@@ -15,7 +33,7 @@
                 <br />
                 <div class="row">
                     <button id="login" type="submit" class="btn-block login">Login</button>
-                </div>
+                </div>-->
             </form>
         </div>
     </div>

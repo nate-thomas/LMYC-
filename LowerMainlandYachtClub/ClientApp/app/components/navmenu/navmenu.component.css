@@ -24,9 +24,18 @@
     color: #3c526b;
     background-color: white;
 }
+
 .link-active > a:hover {
     color: #3c526b;
     background-color: white;
+}
+
+.login-modal {
+    width: 400px;
+}
+
+.login-link > a:hover {
+    cursor: pointer;
 }
 
 
