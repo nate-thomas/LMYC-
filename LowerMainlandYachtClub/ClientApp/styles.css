@@ -16,6 +16,10 @@
     /*color: orange;*/ 
 }
 
+h1 {
+    padding-left: 15px;
+    padding-right: 15px;
+}
  /* for components maybe unecessary*/
 /*.component-content {
 }*/

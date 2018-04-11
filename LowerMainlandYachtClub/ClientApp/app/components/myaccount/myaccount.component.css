@@ -1,1 +1,27 @@
-﻿
+﻿.myaccount-left {
+    padding-right: 35px;
+    padding-left: 35px;
+    min-height: 560px;
+}
+
+.myaccount-right {
+    padding-right: 30px;
+    padding-left: 30px;
+    min-height: 560px;
+}
+
+.myaccount-card {
+    padding-top: 30px;
+}
+
+    .myaccount-card .status-card {
+        margin-top: 30px;
+        padding: 20px;
+    }
+
+
+.member-status, .skipper-status {
+    padding-top: 10px;
+    font-size: 18px;
+}
+

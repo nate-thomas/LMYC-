@@ -1,5 +1,142 @@
 ﻿<div class="body">
     <nav-menu></nav-menu>
-    <h1>My Account</h1>
-    <reservations></reservations>
+    <div class="container">
+        
+        <h1>My Account</h1>
+
+        <div class="col-lg-3">
+            <!--left container contains basic info-->
+            <div class="jumbotron myaccount-left text-center">
+                <div class="card" style="width: 18rem;">
+                    <img class="card-img-top" src="../../assets/images/myaccount.jpg" alt="Card image cap">
+
+                    <div class="card-body myaccount-card">
+                        <p class="username">{{username}}</p>
+                        <p class="credit">
+                            <button type="button" class="btn btn-primary">
+                                {{credits}} <span class="badge badge-light">credits</span>
+                            </button>
+                        </p>
+                        <div class="jumbotron status-card" style="background-color: white">
+                            <div class="member-status">{{memberStatus}}</div>
+                            <div class="skipper-status">{{skipperStatus}}</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="col-lg-9">
+            <!--right container contains detailed info-->
+            <div class="myaccount-right jumbotron">
+                <ul class="nav nav-tabs nav-justified nav-pills">
+                    <li class="active"><a data-toggle="tab" href="#member-status">Member Status</a></li>
+                    <li><a data-toggle="tab" href="#skills">Skills</a></li>
+                    <li><a data-toggle="tab" href="#personal-info">Personal Info</a></li>
+                </ul>
+
+
+                <div class="tab-content">
+                    <!--Member status, skipper status, credits-->
+                    <div id="member-status" class="tab-pane fade in active">
+                        <h3>Member Status</h3>
+                        <table class="table table-hover member-status-table">
+
+                            <tbody>
+                                <tr>
+                                    <td>Current Credits</td>
+                                    <td>{{credits}}</td>
+                                </tr>
+                                <tr>
+                                    <td>Member Status</td>
+                                    <td>{{memberStatus}}</td>
+                                </tr>
+                                <tr>
+                                    <td>Skipper Status</td>
+                                    <td>{{skipperStatus}}</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+
+                    <!--skills, sailing qualifications, and sailing experience -->
+                    <div id="skills" class="tab-pane fade">
+                        <h3>Sailing Qualifications and Experience</h3>
+                        <table class="table table-hover skills-table">
+
+                            <tbody>
+                                <tr>
+                                    <td>Sailing Qualifications</td>
+                                    <td>{{sailingQualifications}}</td>
+                                </tr>
+                                <tr>
+                                    <td>Skills</td>
+                                    <td>{{skills}}</td>
+                                </tr>
+                                <tr>
+                                    <td>Experience</td>
+                                    <td>{{sailingExeprience}}</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+
+
+                    <!--First Name, Last Name, Address, Phone, Emergency Contactx2, Change PW-->
+                    <div id="personal-info" class="tab-pane fade">
+
+                        <h3>Personal Informaton</h3>
+                        <table class="table table-hover info-table">
+
+                            <tbody>
+                                <tr>
+                                    <td>Name</td>
+                                    <td>{{firstName}} {{lastName}}</td>
+                                </tr>
+                                <tr>
+                                    <td>Address</td>
+                                    <td>{{street}}, {{city}}, {{province}}, {{country}}, {{postalCode}}</td>
+                                </tr>
+                                <tr>
+                                    <td>Mobile Phone</td>
+                                    <td>{{mobilePhone}}</td>
+                                </tr>
+                                <tr>
+                                    <td>Home Phone</td>
+                                    <td>{{homePhone}}</td>
+                                </tr>
+                                <tr>
+                                    <td>Work Phone</td>
+                                    <td>{{workPhone}}</td>
+                                </tr>
+                            </tbody>
+                        </table>
+
+                        <hr />
+
+
+                        <h3>Emergency Contact</h3>
+                        <table class="table table-hover emergency-contact-table">
+                            <tbody>
+                                <tr>
+                                    <td>{{emergencyContact1Name}}</td>
+                                    <td>{{emergencyContact1Phone}}</td>
+                                </tr>
+                                <tr>
+                                    <td>{{emergencyContact2Name}}</td>
+                                    <td>{{emergencyContact2Phone}}</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+    <div class="container">
+        <!--RESERVATION-->
+        <reservations></reservations>
+    </div>
 </div>
